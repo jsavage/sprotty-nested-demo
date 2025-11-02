@@ -1,4 +1,10 @@
 // script to collect folder structure from a root folder
+// To use this edit const root which should be set to an existing folder of interest
+// const root is set in line 15 below, 
+// npm install to install dependencies
+// nps ts-node scripts/generateData.ts ehich will replace the .json file at ./src/data.json with data based on file structre at root
+// then build the project with npm run build to compile the typescript sources to javascript
+// then open index.html from folder ./static folder
 
 import { error } from 'console';
 import * as fs from 'fs';
@@ -6,7 +12,7 @@ import path from 'path';
 import ts from 'typescript';
 import { Directory, File } from '../src/model';
 
-const root = '/Users/guillaumefontorbe/git/Theia/theia/packages/core/src';
+const root = '/home/jsavage/langium';
 
 const subDirectories = collectSubDirectories(root);
 const files = collectTsFiles(root);
